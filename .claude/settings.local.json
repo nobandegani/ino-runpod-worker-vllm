@@ -64,7 +64,10 @@
       "Bash(gh search:*)",
       "Bash(gh api:*)",
       "WebSearch",
-      "Bash(where gh:*)"
+      "Bash(where gh:*)",
+      "Bash(gh release:*)",
+      "WebFetch(domain:docs.vllm.ai)",
+      "Bash(gh auth:*)"
     ]
   }
 }
