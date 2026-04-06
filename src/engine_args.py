@@ -25,14 +25,14 @@ DEFAULT_ARGS = {
     "tokenizer_mode": "auto",
     "trust_remote_code": False,
     "load_format": "auto",
-    "dtype": "bfloat16",
+    "dtype": "auto",
     "kv_cache_dtype": "auto",
     "seed": 0,
     "block_size": 16,
-    "enable_prefix_caching": True,
+    "enable_prefix_caching": False,
     "disable_sliding_window": False,
     "cpu_offload_gb": 0,
-    "max_num_seqs": 128,
+    "max_num_seqs": 256,
     "max_logprobs": 20,
     "enforce_eager": False,
     "max_seq_len_to_capture": 8192,
@@ -55,9 +55,6 @@ DEFAULT_ARGS = {
     "guided_decoding_backend": "outlines",
     "spec_decoding_acceptance_method": "rejection_sampler",
     "stream_interval": 1,
-    "enable_chunked_prefill": True,
-    "model": "huihui-ai/Huihui-Qwen3.5-35B-A3B-abliterated",
-    "max_model_len": 65536,
 
 }
 

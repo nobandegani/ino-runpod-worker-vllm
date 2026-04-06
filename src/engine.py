@@ -176,7 +176,7 @@ class vLLMEngine:
 class OpenAIvLLMEngine(vLLMEngine):
     def __init__(self, vllm_engine):
         super().__init__(vllm_engine)
-        self.served_model_name = os.getenv("OPENAI_SERVED_MODEL_NAME_OVERRIDE", "qwen3.5-35b-a3b") or self.engine_args.served_model_name or self.engine_args.model
+        self.served_model_name = os.getenv("OPENAI_SERVED_MODEL_NAME_OVERRIDE") or self.engine_args.served_model_name or self.engine_args.model
         self.response_role = os.getenv("OPENAI_RESPONSE_ROLE") or "assistant"
         self.lora_adapters = self._load_lora_adapters()
 
@@ -275,7 +275,7 @@ class OpenAIvLLMEngine(vLLMEngine):
             chat_template_content_format="auto",
             trust_request_chat_template=os.getenv('TRUST_REQUEST_CHAT_TEMPLATE', 'false').lower() == 'true',
             return_tokens_as_token_ids=os.getenv('RETURN_TOKENS_AS_TOKEN_IDS', 'false').lower() == 'true',
-            reasoning_parser=os.getenv('REASONING_PARSER', "qwen3") or "",
+            reasoning_parser=os.getenv('REASONING_PARSER', "") or "",
             enable_auto_tools=os.getenv('ENABLE_AUTO_TOOL_CHOICE', 'false').lower() == 'true',
             exclude_tools_when_tool_choice_none=os.getenv('EXCLUDE_TOOLS_WHEN_TOOL_CHOICE_NONE', 'false').lower() == 'true',
             tool_parser=os.getenv('TOOL_CALL_PARSER', "") or None,
